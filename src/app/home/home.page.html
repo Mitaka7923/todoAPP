@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" color="danger" fill="clear" (click)="removeAll(todoIndex)">
+      <ion-icon name="close-circle-sharp"></ion-icon>
+    </ion-button>
+    <ion-button slot="start" fill="clear" routerLink="/calculator">
+      <ion-icon name="calculator-sharp"></ion-icon>
+    </ion-button>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="true"></ion-menu-button>
+    </ion-buttons>
+    <div class="homeT">
+      <ion-text>Task Manager</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="todoNameText">
+    <ion-input required="true" maxlength="25" type="text" (keydown.enter)="onEnter($event.target.value)" name="todoName"
+      [(ngModel)]="todoName" placeholder="Add a new task">
+    </ion-input>
+  </div>
+  <ion-button (click)="addTodo(todoName)" expand="full" fill="solid" color="primary">
+    <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+    Submit this task
+  </ion-button>
+  <ion-list>
+    <ion-item *ngFor="let todoItem of todos; let todoIndex = index" slot="start">
+      {{ todoIndex + 1 }}. {{ todoItem }}
+      <ion-button (click)="removeItem(todoIndex)" color="dark" slot="end" fill="clear">
+        <ion-icon name="archive-sharp"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

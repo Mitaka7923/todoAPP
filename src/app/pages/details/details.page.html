@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-button routerLink="/avatar" expand="full" color="secondary" strong="false">
+    <ion-icon name="person-circle" slot="start"></ion-icon>User
+  </ion-button>
+
+  <ion-button routerLink="/creator" expand="full" color="success" strong="false">
+    <ion-icon name="happy" slot="start"></ion-icon>
+    Creator
+  </ion-button>
+
+  <ion-button routerLink="/app-info" expand="full" color="danger" strong="false">
+    <ion-icon name="nuclear" slot="start"></ion-icon>
+    Application
+  </ion-button>
+
+</ion-content>
+
+<ion-button routerLink="/changes" expand="full" color="primary" strong="false">
+  <ion-icon name="logo-ionic" slot="start"></ion-icon>
+      <ion-badge slot="end" color="danger">12</ion-badge>
+  New features
+</ion-button>
