@@ -48,10 +48,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/fourth-card-details/fourth-card-details.module').then(m => m.FourthCardDetailsPageModule)
   },
   {
-    path: 'avatar',
-    loadChildren: () => import('./pages/avatar/avatar.module').then(m => m.AvatarPageModule)
-  },
-  {
     path: 'fifth-card',
     loadChildren: () => import('./pages/fifth-card/fifth-card.module').then(m => m.FifthCardPageModule)
   },
