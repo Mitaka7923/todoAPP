@@ -20,10 +20,9 @@ export class CalculatorPage {
   ];
 
   public onButtonPress(symbol) {
-    console.log(symbol);
 
     if (isNumber(symbol)) {
-      console.log('is a number');
+
       if (this.readyForNewInput)
         this.value = '' + symbol;
       else
