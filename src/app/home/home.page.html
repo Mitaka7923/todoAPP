@@ -28,7 +28,7 @@
     <ion-item *ngFor="let todoItem of todos; let todoIndex = index" slot="start">
       {{ todoIndex + 1 }}. {{ todoItem }}
       <ion-button (click)="removeItem(todoIndex)" color="dark" slot="end" fill="clear">
-        <ion-icon name="trash-sharp"></ion-icon>
+        <ion-icon color="dark" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
