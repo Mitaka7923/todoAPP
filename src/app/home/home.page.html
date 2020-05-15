@@ -1,36 +1,36 @@
 <ion-app>
-<ion-header>
-  <ion-toolbar>
-    <div class="homeT">
-      <ion-text>Task Manager App</ion-text>
+  <ion-header>
+    <ion-toolbar>
+      <div class="homeT">
+        <ion-text>Task Manager App</ion-text>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <div class="todoNameText">
+      <ion-input required="true" maxlength="25" type="text" (keydown.enter)="onEnter($event.target.value)"
+        name="todoName" [(ngModel)]="todoName" placeholder="Add a new task">
+      </ion-input>
     </div>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
 
-  <div class="todoNameText">
-    <ion-input required="true" maxlength="25" type="text" (keydown.enter)="onEnter($event.target.value)" name="todoName"
-      [(ngModel)]="todoName" placeholder="Add a new task">
-    </ion-input>
-  </div>
+    <ion-button (click)="addTodo(todoName)" expand="full" fill="solid" color="primary">
+      <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+      Submit this task
+    </ion-button>
+    <ion-list>
+      <ion-item *ngFor="let todoItem of todos; let todoIndex = index" slot="start">
+        {{ todoIndex + 1 }}. {{ todoItem }}
+        <ion-button (click)="removeItem(todoIndex)" color="dark" slot="end" fill="clear">
+          <ion-icon color="dark" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
 
-  <ion-button (click)="addTodo(todoName)" expand="full" fill="solid" color="primary">
-    <ion-icon name="add-circle-outline" slot="start"></ion-icon>
-    Submit this task
-  </ion-button>
-  <ion-list>
-    <ion-item *ngFor="let todoItem of todos; let todoIndex = index" slot="start">
-      {{ todoIndex + 1 }}. {{ todoItem }}
-      <ion-button (click)="removeItem(todoIndex)" color="dark" slot="end" fill="clear">
-        <ion-icon color="dark" name="trash-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-
-</ion-content>
-<ion-item padding>
-  <ion-button slot="icon-only" fill="clear" strong="true" slot="end" color="danger" (click)="removeAll(todoIndex)">
-    <ion-icon name="close-circle-sharp"></ion-icon>
-  </ion-button>
-</ion-item>
+  </ion-content>
+  <ion-item padding>
+    <ion-button slot="icon-only" fill="clear" strong="true" slot="end" color="danger" (click)="removeAll(todoIndex)">
+      <ion-icon name="close-circle-sharp"></ion-icon>
+    </ion-button>
+  </ion-item>
 </ion-app>
