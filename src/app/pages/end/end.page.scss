@@ -2,10 +2,6 @@ a {
   color: rgb(0, 0, 0);
 }
 
-a:link {
-  background-color: grey;
-}
-
 a:hover {
   color: blueviolet;
 }
@@ -16,4 +12,8 @@ a:active {
 
 .link-content-movie {
     color: hotpink;
+}
+
+ion-button {
+    --text-decoration: none;
 }
